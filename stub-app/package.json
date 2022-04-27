@@ -2,9 +2,6 @@
   "name": "stub-app",
   "version": "0.0.2",
   "private": true,
-  "workspaces": {
-    "nohoist": ["**"]
-  },
   "scripts": {
     "prebuild": "yarn run clean",
     "dr:surge": "node dr-surge.js",
@@ -86,8 +83,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-last-location": "^2.0.1",
-    "sirv-cli": "^1.0.12",
-    "console-build": "1.0.0"
+    "sirv-cli": "^1.0.12"
   },
   "msw": {
     "workerDirectory": "public"
