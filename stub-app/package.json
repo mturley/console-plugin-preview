@@ -1,10 +1,6 @@
 {
-  "name": "patternfly-seed",
+  "name": "stub-app",
   "version": "0.0.2",
-  "description": "An open source build scaffolding utility for web apps.",
-  "repository": "https://github.com/patternfly/patternfly-react-seed.git",
-  "homepage": "https://patternfly-react-seed.surge.sh",
-  "license": "MIT",
   "private": true,
   "workspaces": {
     "nohoist": ["**"]
