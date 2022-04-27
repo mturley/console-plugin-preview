@@ -42,6 +42,8 @@ echo "\nLinking internal console dependencies in stub-app...\n"
 
 cd "$wd"
 
+# TODO: figure out why we are still getting import errors (install needed dependencies, but what's up with th eexport in common-types.ts?)
+
 # TODO: see if we can successfully load a plugin?
 # TODO: run a build and see if it can successfully load a plugin in prod?
 # TODO: see if we can get it to run via npx somehow?
