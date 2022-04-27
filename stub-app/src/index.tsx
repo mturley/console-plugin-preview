@@ -25,7 +25,7 @@ const loadAndEnableMockPlugin = async () => {
   }
 };
 
-loadAndEnableMockPlugin();
+// loadAndEnableMockPlugin();
 
 if (process.env.NODE_ENV !== 'production') {
   const config = {

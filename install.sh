@@ -16,8 +16,8 @@ if [ ! -d "./tmp/console/frontend/packages/console-dynamic-plugin-sdk/dist" ]; t
   mkdir -p tmp
   cd tmp
   git clone https://github.com/openshift/console.git
-  cd console
-  ./build-frontend.sh
+  # cd console
+  # ./build-frontend.sh
 else
   echo "\nSkipping clone/build of console (build assets already found)"
 fi
@@ -28,16 +28,17 @@ yarn install
 
 echo "\nLinking internal console dependencies in stub-app...\n"
 [ ! -d "$wd/stub-app/node_modules/console" ] && ln -sv ../../tmp/console "$wd/stub-app/node_modules/console"
-cd "$wd/tmp/console/frontend/node_modules"
-for d in */ ; do
-  dep="${d%/}"
-  [ ! -d "$wd/stub-app/node_modules/$dep" ] && ln -sv "../../tmp/console/frontend/node_modules/$dep" "$wd/stub-app/node_modules/$dep"
-done
-cd "$wd/tmp/console/frontend/packages/console-dynamic-plugin-sdk/node_modules"
-for d in */ ; do
-  dep="${d%/}"
-  [ ! -d "$wd/stub-app/node_modules/$dep" ] && ln -sv "../../tmp/console/frontend/packages/console-dynamic-plugin-sdk/node_modules/$dep" "$wd/stub-app/node_modules/$dep"
-done
+
+# cd "$wd/tmp/console/frontend/node_modules"
+# for d in */ ; do
+#   dep="${d%/}"
+#   [ ! -d "$wd/stub-app/node_modules/$dep" ] && ln -sv "../../tmp/console/frontend/node_modules/$dep" "$wd/stub-app/node_modules/$dep"
+# done
+# cd "$wd/tmp/console/frontend/packages/console-dynamic-plugin-sdk/node_modules"
+# for d in */ ; do
+#   dep="${d%/}"
+#   [ ! -d "$wd/stub-app/node_modules/$dep" ] && ln -sv "../../tmp/console/frontend/packages/console-dynamic-plugin-sdk/node_modules/$dep" "$wd/stub-app/node_modules/$dep"
+# done
 
 cd "$wd"
 
