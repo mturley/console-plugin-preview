@@ -5,7 +5,7 @@ if [ ! -f "./stub-app/package.json" ]; then
     exit 1
 fi
 
-WD=$(pwd)
+wd=$(pwd)
 
 if [ ! -d "./tmp/console/frontend/packages/console-dynamic-plugin-sdk/dist" ]; then
   echo "\nCloning and building console frontend in tmp directory...\n"
@@ -22,18 +22,25 @@ else
   echo "\nSkipping clone/build of console (build assets already found)"
 fi
 
-cd "$WD"
 echo "\nInstalling dependencies for stub-app...\n"
-cd stub-app
+cd "$wd/stub-app"
 yarn install
 
-cd "$WD"
 echo "\nLinking internal console dependencies in stub-app...\n"
-ln -sv ../tmp/console/ ./node_modules/console
+[ ! -d "$wd/stub-app/node_modules/console" ] && ln -sv ../../tmp/console "$wd/stub-app/node_modules/console"
+cd "$wd/tmp/console/frontend/node_modules"
+for d in */ ; do
+  dep="${d%/}"
+  [ ! -d "$wd/stub-app/node_modules/$dep" ] && ln -sv "../../tmp/console/frontend/node_modules/$dep" "$wd/stub-app/node_modules/$dep"
+done
+cd "$wd/tmp/console/frontend/packages/console-dynamic-plugin-sdk/node_modules"
+for d in */ ; do
+  dep="${d%/}"
+  [ ! -d "$wd/stub-app/node_modules/$dep" ] && ln -sv "../../tmp/console/frontend/packages/console-dynamic-plugin-sdk/node_modules/$dep" "$wd/stub-app/node_modules/$dep"
+done
 
-cd "$WD"
+cd "$wd"
 
-# TODO: link the rest of the node_modules we need from inside console
 # TODO: see if we can successfully load a plugin?
 # TODO: run a build and see if it can successfully load a plugin in prod?
 # TODO: see if we can get it to run via npx somehow?
