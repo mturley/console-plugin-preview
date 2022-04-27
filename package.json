@@ -1,7 +1,4 @@
 {
   "private": true,
-  "workspaces": {
-    "packages": ["stub-app", "console-build"],
-    "nohoist": ["stub-app", "console-build"]
-  }
+  "workspaces": ["stub-app", "console-build"]
 }

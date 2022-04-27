@@ -1,4 +1,16 @@
 {
+  "private": true,
   "name": "console-build",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
+  },
+  "scripts": {
+    "postinstall": "./postinstall.sh"
+  },
+  "dependencies": {
+    "console": "https://github.com/openshift/console.git"
+  }
 }
