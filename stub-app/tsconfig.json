@@ -21,8 +21,16 @@
       "@app/*": ["src/app/*"],
       "@assets/*": ["node_modules/@patternfly/react-core/dist/styles/assets/*"],
       "@console/internal/*": ["node_modules/console/frontend/public/*"],
+      "@console/shared/*": ["node_modules/console/frontend/packages/console-shared/*"],
+      "@console/plugin-sdk": ["node_modules/console/frontend/packages/console-plugin-sdk"],
+      "@console/plugin-sdk/*": ["node_modules/console/frontend/packages/console-plugin-sdk/*"],
       "@console/dynamic-plugin-sdk": ["node_modules/console/frontend/packages/console-dynamic-plugin-sdk"],
-      "@console/dynamic-plugin-sdk/*": ["node_modules/console/frontend/packages/console-dynamic-plugin-sdk/*"]
+      "@console/dynamic-plugin-sdk/*": ["node_modules/console/frontend/packages/console-dynamic-plugin-sdk/*"],
+      "@console/operator-lifecycle-manager": ["node_modules/console/frontend/packages/operator-lifecycle-manager"],
+      "@console/operator-lifecycle-manager/*": ["node_modules/console/frontend/packages/operator-lifecycle-manager/*"],
+      "@console/active-plugins": ["console-dep-stub/active-plugins"],
+      "@console/app": ["node_modules/console/frontend/packages/console-app"],
+      "@console/app/*": ["node_modules/console/frontend/packages/console-app/*"],
     },
     "importHelpers": true,
     "skipLibCheck": true

@@ -26,8 +26,8 @@ echo "\nInstalling dependencies for stub-app...\n"
 cd "$wd/stub-app"
 yarn install
 
-echo "\nLinking internal console dependencies in stub-app...\n"
-[ ! -d "$wd/stub-app/node_modules/console" ] && ln -sv ../../tmp/console "$wd/stub-app/node_modules/console"
+# echo "\nLinking internal console dependencies in stub-app...\n"
+# [ ! -d "$wd/stub-app/node_modules/console" ] && ln -sv ../../tmp/console "$wd/stub-app/node_modules/console"
 
 # cd "$wd/tmp/console/frontend/node_modules"
 # for d in */ ; do
