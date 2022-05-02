@@ -9,6 +9,13 @@ module.exports = (env) => {
   return {
     module: {
       rules: [
+        // ESM interop necessary because we're using webpack 5 (see https://stackoverflow.com/a/69255531)
+        {
+          test: /\.m?js/,
+          resolve: {
+            fullySpecified: false,
+          },
+        },
         {
           test: /\.(tsx|ts|jsx)?$/,
           use: [
